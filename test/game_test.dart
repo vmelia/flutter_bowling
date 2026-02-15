@@ -54,6 +54,12 @@ void main() {
       expect(game.score(), 24);
     });
 
+    test('perfect game', () {
+      rollMany(12, 10);
+
+      expect(game.score(), 300);
+    });
+
     test('spare in last frame', () {
       rollMany(18, 0);
       rollSpare();
@@ -69,12 +75,6 @@ void main() {
       game.roll(4);
 
       expect(game.score(), 17);
-    });
-
-    test('perfect game', () {
-      rollMany(12, 10);
-
-      expect(game.score(), 300);
     });
   });
 }
